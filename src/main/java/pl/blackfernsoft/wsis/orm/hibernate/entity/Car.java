@@ -16,6 +16,9 @@ public class Car {
             updatable = true)
     private String name;
 
+    @Column(name = "PLATES")
+    private String plates;
+
     public Long getId() {
         return id;
     }

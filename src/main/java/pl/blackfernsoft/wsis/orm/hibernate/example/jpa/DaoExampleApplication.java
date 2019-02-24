@@ -13,6 +13,8 @@ public class DaoExampleApplication {
         EntityManager entityManager = HibernateUtil.getEntityManager();
 
         CarDao carDao = new CarDao(entityManager);
+        List<Car> mojSamochod = carDao.findByPlates("DW1234");
+        List<Car> mojSamochod2 = carDao.findByPlates("PO243243");
 
         entityManager.getTransaction().begin();
 
