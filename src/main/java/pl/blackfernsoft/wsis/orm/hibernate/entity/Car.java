@@ -1,6 +1,7 @@
 package pl.blackfernsoft.wsis.orm.hibernate.entity;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "CAR")
@@ -19,6 +20,8 @@ public class Car {
     @Column(name = "PLATES")
     private String plates;
 
+    private LocalDateTime createdAt;
+
     public Long getId() {
         return id;
     }
@@ -35,11 +38,29 @@ public class Car {
         this.name = name;
     }
 
+    public String getPlates() {
+        return plates;
+    }
+
+    public void setPlates(String plates) {
+        this.plates = plates;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
     @Override
     public String toString() {
         return "Car{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", plates='" + plates + '\'' +
+                ", createdAt=" + createdAt +
                 '}';
     }
 }

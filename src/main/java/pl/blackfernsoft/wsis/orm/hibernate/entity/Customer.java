@@ -2,6 +2,7 @@ package pl.blackfernsoft.wsis.orm.hibernate.entity;
 
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 public class Customer {
@@ -15,6 +16,8 @@ public class Customer {
 
     @Column(name = "LAST_NAME")
     private String lastName;
+
+    private LocalDateTime dateTime;
 
     public Long getId() {
         return id;
@@ -38,5 +41,13 @@ public class Customer {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
     }
 }
